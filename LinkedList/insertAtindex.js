@@ -141,7 +141,7 @@ class LinkedList {
             output += `${current.value} =>`
             current = current.next
         }
-
+        
         console.log(output + "NULL");
     }
 }
