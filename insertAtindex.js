@@ -152,6 +152,7 @@ myList.appendNode(10);
 myList.appendNode(20)
 myList.appendNode(30)
 myList.appendNode(40)
+myList.appendNode(50)
 
 myList.display()
 
