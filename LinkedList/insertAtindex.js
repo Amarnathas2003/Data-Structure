@@ -141,6 +141,7 @@ class LinkedList {
             output += `${current.value} =>`
             current = current.next
         }
+
         console.log(output + "NULL");
     }
 }
@@ -158,6 +159,6 @@ myList.addBefore(4, 99)
 
 myList.display()
 
-myList.addAfter(2,88)
+myList.addAfter(2, 88)
 
 myList.display()
