@@ -34,6 +34,6 @@ function alphabetChange(word, n) {
 }
 
 
-const word = 'Amar';
+const word = 'hisham';
 const n = 3;
 console.log(alphabetChange(word, n));

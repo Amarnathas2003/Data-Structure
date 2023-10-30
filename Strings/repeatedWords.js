@@ -23,5 +23,5 @@ function findCount(word) {
     return result;
 }
 
-const word = 'aaccbbg'
+const word = 'aassddf'
 console.log(findCount(word));

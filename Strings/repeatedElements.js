@@ -7,6 +7,7 @@
  *  Value m has been repeated 1 Times
     Value a has been repeated 3 Times
     Value l has been repeated 1 Times
+    
  */
 
 function printDuplicates(value) {

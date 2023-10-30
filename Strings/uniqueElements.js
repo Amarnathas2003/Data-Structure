@@ -25,5 +25,5 @@ function removeDuplicates(word) {
     return elements;
 }
 
-const word = 'malayhalam'
+const word = 'malayalam'
 console.log(removeDuplicates(word));
