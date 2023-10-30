@@ -28,7 +28,7 @@ function fibonacciSerious(a, b, n) {
 
     const c = a + b;
     console.log(c)
-    //Ivide values previous function callil a b n ayi enthano pass cheythath athanu edukkunnath
+    //Pass a b n values which has passed previously. It Will consider it As Previous Values
     fibonacciSerious(b, c, n - 1);
 }
 

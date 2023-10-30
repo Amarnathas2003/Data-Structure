@@ -75,7 +75,7 @@ class LinkedList {
     display() {
 
         if (this.head === null) {
-            console.log("The Linked List Is empty")
+            console.log("The Linked List is empty")
             return;
         }
 
@@ -94,27 +94,17 @@ myList.addFirst(20)
 
 myList.display()
 
-console.log("------------------------------")
-
 myList.addLast(30)
 myList.addLast(40)
 
 
 myList.display()
 
-console.log("-------------------------------")
-
-
 myList.removeFirst()
 
-
 myList.display()
-
-console.log("-------------------------------")
 
 myList.removeLast()
 
 
 myList.display()
-
-console.log("-------------------------------")

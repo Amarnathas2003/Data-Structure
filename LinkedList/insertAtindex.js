@@ -51,7 +51,7 @@ class LinkedList {
 
     deleteNode(value) {
         if (!this.head) {
-            console.log("Nothing to delete here")
+            console.log("Nothing to delete")
             return;
         }
 
@@ -76,7 +76,7 @@ class LinkedList {
         position = position - 1;
 
         if (!this.head) {
-            console.log("List is empty")
+            console.log("The List is Empty")
             return;
         }
 
@@ -110,7 +110,7 @@ class LinkedList {
         position -= 1;
 
         if (!this.head) {
-            console.log("the lsit is empty")
+            console.log("The Lisit is Empty")
             return;
         }
 
@@ -141,7 +141,7 @@ class LinkedList {
             output += `${current.value} =>`
             current = current.next
         }
-        
+
         console.log(output + "NULL");
     }
 }
@@ -159,6 +159,6 @@ myList.addBefore(4, 99)
 
 myList.display()
 
-myList.addAfter(2, 88)
+myList.addAfter(2, 77)
 
 myList.display()

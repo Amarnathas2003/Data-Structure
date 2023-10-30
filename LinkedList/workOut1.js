@@ -24,7 +24,7 @@ class LinkedList {
 
     printList() {
         if (this.head === null) {
-            console.log("List is empty")
+            console.log("List is Empty")
             return;
         }
 
@@ -57,7 +57,7 @@ myList.addFirst(7)
 myList.addFirst(3)
 myList.addFirst(8)
 myList.addFirst(2)
-myList.addFirst(3)
+
 
 myList.printList()
-console.log("This is the index", myList.getElement(8))
+console.log("This is the Index", myList.getElement(8))
