@@ -7,7 +7,7 @@ function getFactorial(number) {
     return number * getFactorial(number - 1)
 }
 
-// console.log(getFactorial(5))
+console.log(getFactorial(5))
 
 function sumOfNumbers(n) {
 
@@ -18,7 +18,7 @@ function sumOfNumbers(n) {
     return n + sumOfNumbers(n - 1);
 }
 
-// console.log(sumOfNumbers(10))
+console.log(sumOfNumbers(10))
 
 function fibonacciSerious(a, b, n) {
 
@@ -32,12 +32,13 @@ function fibonacciSerious(a, b, n) {
     fibonacciSerious(b, c, n - 1);
 }
 
-// const a = 0;
-// const b = 1;
-// console.log(a)
-// console.log(b)
-// const n = 7;
-// fibonacciSerious(a, b, n - 2)
+const a = 0;
+const b = 1;
+console.log(a)
+console.log(b)
+const n = 7;
+
+fibonacciSerious(a, b, n - 2)
 
 function printInRang(start, end) {
 
