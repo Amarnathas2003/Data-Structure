@@ -19,7 +19,7 @@ function binarySearch(array, key) {
         }
     }
 
-    console.log("Element Not Found")
+    console.log("Element Not Found In the Array")
     return -1;
 }
 
