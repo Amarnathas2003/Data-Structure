@@ -9,7 +9,7 @@ function binarySearch(array, key) {
             console.log("Element Found:-")
             return array[mid];
         }
-
+  
         if (array[mid] < key) { 
             //Here the element will be in right side means vale is greater than mid value
             start = mid + 1;

@@ -41,7 +41,7 @@ class LinkedList {
 
     removeFirst() {
         if (this.head === null) {
-            console.log("Nothing to Remove From Array")
+            console.log("Nothing to Remove")
         }
 
         if (this.head.next === null) {
