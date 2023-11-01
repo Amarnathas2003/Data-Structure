@@ -23,5 +23,24 @@ function findCount(word) {
     return result;
 }
 
+
 const word = 'qqxxzzy'
 console.log(findCount(word));
+
+
+
+function checkRepeatation(word) {
+    let result = {};
+
+    for (let i = 0; i < word.length; i++) {
+
+        if (result[word[i]] >= 0) {
+            result[word[i]] += 1;
+        } else {
+            result[word[i]] = 1;
+        }
+    }
+
+    return result;
+}
+

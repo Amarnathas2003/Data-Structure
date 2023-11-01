@@ -9,6 +9,8 @@ function getFactorial(number) {
 
 console.log(getFactorial(5))
 
+
+
 function sumOfNumbers(n) {
 
     if (n === 1) {

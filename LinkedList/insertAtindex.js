@@ -70,6 +70,7 @@ class LinkedList {
         }
     }
 
+    
 
     addBefore(position, data) {
         let newNode = new Node(data);
@@ -103,8 +104,6 @@ class LinkedList {
     }
 
 
-
-
     addAfter(position, value) {
         const newNode = new Node(value)
         position -= 1;
@@ -131,6 +130,8 @@ class LinkedList {
         newNode.next = current.next;
         current.next = newNode;
     }
+
+
 
 
 

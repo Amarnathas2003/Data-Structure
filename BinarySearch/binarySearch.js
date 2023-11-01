@@ -9,8 +9,8 @@ function binarySearch(array, key) {
             console.log("Element Found:-")
             return array[mid];
         }
-  
-        if (array[mid] < key) { 
+
+        if (array[mid] < key) {
             //Here the element will be in right side means vale is greater than mid value
             start = mid + 1;
         } else {
@@ -23,6 +23,33 @@ function binarySearch(array, key) {
     return -1;
 }
 
+// const array = [10, 20, 30, 46, 55, 65, 80]
+// const result = binarySearch(array, 55);
+// console.log(result)
+
+function getNumber(array, value) {
+    let start = 0;
+    let end = array.length - 1;
+
+    while (start <= end) {
+        let mid = (start + end) / 2;
+
+        if (array[mid] == value) {
+            console.log(`Element found in  position ${mid + 1}`)
+            return array[mid];
+        }
+
+        if (array[mid] < value) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+    }
+    
+    console.log("Number Does not Exist In Array");
+    return -1;
+}
+
 const array = [10, 20, 30, 46, 55, 65, 80]
-const result = binarySearch(array, 55);
+const result = getNumber(array, 55);
 console.log(result)
