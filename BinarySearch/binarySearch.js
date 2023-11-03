@@ -45,7 +45,7 @@ function getNumber(array, value) {
             end = mid - 1;
         }
     }
-    
+
     console.log("Number Does not Exist In Array");
     return -1;
 }
@@ -53,3 +53,4 @@ function getNumber(array, value) {
 const array = [10, 20, 30, 46, 55, 65, 80]
 const result = getNumber(array, 55);
 console.log(result)
+
