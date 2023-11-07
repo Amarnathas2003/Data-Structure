@@ -41,7 +41,6 @@ function mergeSort(array) {
             newArray.push(last[j])
             j++;
         }
-
         return newArray;
     }
 }

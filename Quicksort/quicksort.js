@@ -58,10 +58,12 @@ function getQuicksort(array, low, high) {
 
     while (s <= e) {
 
+        //Move s if its not violating
         while (array[s] < pivot) {
             s++;
         }
 
+       //Move e if it's not vilolating 
         while (array[e] > pivot) {
             e--;
         }

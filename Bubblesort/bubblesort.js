@@ -6,7 +6,6 @@ function getBubblesort(array) {
         for (let j = 1; j < array.length - i; j++) {
 
             if (array[j] < array[j - 1]) {
-
                 let temp = array[j]
                 array[j] = array[j - 1];
                 array[j - 1] = temp;
