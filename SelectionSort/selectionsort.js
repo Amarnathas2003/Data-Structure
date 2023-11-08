@@ -25,8 +25,3 @@ const myArray = [5, 8, 20, -1];
 selectionSort(myArray);
 console.log(myArray);
 
-//Steps of selection sorting 
-
-// 1 -> In the j Looping find the smallest element in the array and make it as the min value index
-
-//2 -> If the J value has been changed do the swapping

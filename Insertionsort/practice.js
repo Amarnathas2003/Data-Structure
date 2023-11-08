@@ -3,13 +3,13 @@
 function insertionSort(array) {
 
     for (let i = 0; i < array.length - 1; i++) {
-        for (j = i + 1; j > 0; j--) {
+
+        for (let j = i + 1; j > 0; j--) {
 
             if (array[j] < array[j - 1]) {
                 let temp = array[j];
                 array[j] = array[j - 1];
                 array[j - 1] = temp;
-
             } else {
                 break;
             }
@@ -18,5 +18,6 @@ function insertionSort(array) {
     return array;
 }
 
-const array = [5, 2, 8, 9, 1]
+const array = [6, 3, 8, 2, 9];
+
 console.log(insertionSort(array));

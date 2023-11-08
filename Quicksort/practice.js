@@ -1,16 +1,15 @@
+function quickSort(array, low, high) {
 
-
-function Quicksort(array, low, high) {
     if (low >= high) {
         return;
     }
 
     let s = low;
     let e = high;
+
     let mid = Math.floor((s + e) / 2);
     let pivot = array[mid];
 
-    //Finding the Violation
     while (s <= e) {
 
         while (array[s] < pivot) {
@@ -30,12 +29,10 @@ function Quicksort(array, low, high) {
         }
     }
 
-    //Recursion Calls
-    Quicksort(array, low, e);
-    Quicksort(array, s, high);
+    quickSort(array, low, e)
+    quickSort(array, s, high)
 }
 
-
-const array = [3, 2, 0, 4, 9];
-Quicksort(array, 0, array.length - 1);
+const array = [6, 2, 4, 9, 8];
+quickSort(array, 0, array.length - 1);
 console.log(array);

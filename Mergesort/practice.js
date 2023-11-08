@@ -1,13 +1,11 @@
 
-
 function mergeSort(array) {
 
     if (array.length <= 1) {
         return array;
     }
 
-
-    let mid = Math.floor(array.length / 2);
+    let mid = Math.floor(array.length / 2)
 
     let left = mergeSort(array.slice(0, mid));
     let right = mergeSort(array.slice(mid));
@@ -16,7 +14,7 @@ function mergeSort(array) {
 
     function mergeArray(left, right) {
 
-        const newArray = [];
+        let newArray = [];
 
         let i = 0;
         let j = 0;
@@ -38,14 +36,12 @@ function mergeSort(array) {
         }
 
         while (j < right.length) {
-            newArray.push(right[j])
+            newArray.push(right[j]);
             j++;
         }
-
         return newArray;
     }
 }
 
-
-const array = [6, 7, 8, 2, 3, 0];
+const array = [6, 2, 8, 1, 7];
 console.log(mergeSort(array));

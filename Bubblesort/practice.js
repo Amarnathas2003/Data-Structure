@@ -1,11 +1,7 @@
 
 function bubbleSort(array) {
 
-    if (array.length <= 1) {
-        return array;
-    }
-
-    for (let i = 0; i < array.length - 1; i++) {
+    for (let i = 0; i < array.length; i++) {
 
         for (let j = 1; j < array.length - i; j++) {
 
@@ -20,5 +16,7 @@ function bubbleSort(array) {
     return array;
 }
 
-const array = [3, 0, 2, 8, 9]
+const array = [10, 5, 2, 3]
 console.log(bubbleSort(array));
+
+
