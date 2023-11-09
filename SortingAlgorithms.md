@@ -1,3 +1,8 @@
+```css
+All the Sorting Methods Code is Also there. Check it out if youre not getting the Logic.
+```
+
+
 -----1.**Bubble Sort**-----
 
 /** In Bubble Sort we are comparing the adjacent elements and swapping the values. When one round of exicution is completed, the largest element in the array will be at the last position of the array. **\
@@ -63,3 +68,28 @@
 ###### Insertion Sort Time Complexity = *O(n^2)* worst case and the average case, where "n" is the number of elements in the array to be sorted.
  
 ###### Insertion Sort Space Complexity = *O(1)* It takes constant amount of Space to exicute the algorithm.
+
+-----3.**Quick Sort**-----
+
+/** In Quick Sort we are finding a Pivot element(It can be any random value from in the array) and bringing that Pivot element to its correct Position. Here we are puting all the values which is less than the pivot element to the left side of the array and greater values to the right side of the array.
+
+**Steps of Quick Sort**
+
+- Pass the low(0) and high(array.length - 1) to the function, check the base case then return if it's true.
+
+- Calculate the pivot value using two other pointers s (s = low) and e (e = high)
+
+- Start a outer while loop and inside that start two while loops for the left section and for the right section. Move pointer s (s++) if the left values are lesser than the pivot value and move the pointer e (e--) if the right values are greater than the pivot element.
+
+- When we come across a violation swap the both values. And don't forget to move the Pointers also.
+
+- After all the while loops are finished exicuting make the recursion calls for the left part and for the right part.
+
+- Return the final sorted Array.
+
+
+###### Quick Sort Time Complexity = *O(n^2)* (worst case). Where "n" is the number of elements in the array to be sorted.*(Average case it will be O(n log n))*
+
+
+###### Insertion Sort Space Complexity = *O(log n)* Space to exicute the algorithm.
+
