@@ -30,6 +30,7 @@ class TreeNode {
         return null;
     }
 
+    //Pre Order Traversal
     traversal = (node) => {
         console.log(node.value);
         for (let child of node.children) {
