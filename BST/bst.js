@@ -90,9 +90,8 @@ class BST {
         //This one makes sense
         if (root.data <= min || root.data >= max) {
             return false;
-        }   
+        }
 
-        //Look H
         return (
             this.isBST(root.left, min, root.data) &&
             this.isBST(root.right, root.data, max)
