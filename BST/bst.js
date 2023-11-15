@@ -43,6 +43,7 @@ class BST {
         } else if (root.data === key) {
             return true;
         } else {
+            //This does the work
             if (this.search(root.left, key) || this.search(root.right, key)) {
                 return true;
             }
@@ -54,14 +55,13 @@ class BST {
         if (!root) {
             return 0;
         }
-
         const leftHeight = this.height(root.left);
         const rightHeigt = this.height(root.right);
 
         return Math.max(leftHeight, rightHeigt) + 1;
     }
 
-    //In order Traversal
+   
     inOrderTraversal(root) {
         if (!root) return;
         this.inOrderTraversal(root.left);
@@ -92,6 +92,7 @@ class BST {
             return false;
         }
 
+        //This one still bugs me...
         return (
             this.isBST(root.left, min, root.data) &&
             this.isBST(root.right, root.data, max)

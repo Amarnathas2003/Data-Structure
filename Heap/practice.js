@@ -3,8 +3,8 @@ class minHeap {
         this.heap = [];
     }
 
-    getParentIndex(parentIndex) {
-        return ~~((parentIndex - 1) / 2);
+    getParentIndex(childIndex) {
+        return ~~((childIndex - 1) / 2);
     }
 
     hasParentIndex(index) {
@@ -15,14 +15,13 @@ class minHeap {
         return this.heap[this.getParentIndex(index)];
     }
 
-    swap(index1, index2) {
-        [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
-    }
-
-
     add(data) {
         this.heap.push(data);
         this.heapifyUp();
+    }
+
+    swap(index1, index2) {
+        [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
     }
 
     heapifyUp() {
@@ -34,47 +33,45 @@ class minHeap {
     }
 
 
-
-    getLeftChildIndex(childIndex) {
-        return 2 * childIndex + 1;
-    }
-    
-    getRightChildIndex(parentIndex) {
-        return 2 * parentIndex + 2;
-    }
-
-    hasLeftChildIndex(index) {
-        return this.getLeftChildIndex(index) < this.heap.length;
-    }
-
-    hasRightChildIndex(parentIndex) {
-        return this.getRightChildIndex(parentIndex) < this.heap.length;
-    }
-
-    rightChild(index) {
-        return this.heap[this.getRightChildIndex(index)]
-    }
-
-    leftChild(index) {
-        return this.heap[this.getLeftChildIndex(index)]
-    }
-
     remove() {
-        if (this.heap.length === 0) return null;
+        if (this.heap === 0) return null;
         let data = this.heap[0];
         this.heap[0] = this.heap.pop();
         this.heapifyDown()
         return data;
     }
 
+    getLeftChildIndex(parentIndex) {
+        return 2 * parentIndex + 1;
+    }
+
+    getRightChildIndex(parentIndex) {
+        return 2 * parentIndex + 2;
+    }
+
+    hasLeftChildIndex(index) {
+        return this.getLeftChildIndex(index) <= this.heap.length;
+    }
+
+    hasRightChildIndex(index) {
+        return this.getRightChildIndex(index) <= this.heap.length;
+    }
+
+    leftIndex(index) {
+        return this.heap[this.getLeftChildIndex(index)];
+    }
+
+    rightChild(index) {
+        return this.heap[this.getRightChildIndex(index)]
+    }
+
     heapifyDown() {
         let index = 0;
-
         while (this.hasLeftChildIndex(index)) {
-            let smallestChildIndex = this.getLeftChildIndex(index)
 
-            if (this.hasRightChildIndex(index) && this.rightChild(index) < this.leftChild(index)) {
-                smallestChildIndex = this.getRightChildIndex(index)
+            let smallestChildIndex = this.getLeftChildIndex(index);
+            if (this.hasRightChildIndex(index) && this.rightChild(index) < this.leftIndex(index)) {
+                smallestChildIndex = this.getRightChildIndex;
             }
 
             if (this.heap[index] < this.heap[smallestChildIndex]) {
@@ -87,27 +84,46 @@ class minHeap {
         }
     }
 
-
     printHeap() {
-        let value = "";
+        if (this.heap === 0) return null;
+        let result = "";
         for (let i = 0; i < this.heap.length; i++) {
-            value += `${this.heap[i]} , `;
+            result += `${this.heap[i]} , `;
         }
-        console.log(value);
+        console.log(result);
     }
 }
 
-const heap = new minHeap()
+const heapSort = (arr) => {
+    let heap = new minHeap()
 
-heap.add(68)
+    for (let i = 0; i < arr.length; i++) {
+        heap.add(arr[i]);
+    }
+
+    let result = [];
+    for (let j = 0; j < arr.length; j++) {
+        result.push(heap.remove());
+    }
+    return result;
+}
+
+const heap = new minHeap();
+
+heap.add(67)
+heap.add(13)
 heap.add(89)
-heap.add(32)
-heap.add(23)
+heap.add(45)
+heap.add(56)
 
 heap.printHeap();
 
-console.log("After removig")
+console.log('After deleting the node')
 
 heap.remove()
 
-heap.printHeap()
+heap.printHeap();
+
+
+const array = [7, 9, 3, 4, 6]
+console.log(heapSort(array))

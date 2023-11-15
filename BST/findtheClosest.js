@@ -45,6 +45,7 @@ class BST {
     findClosesthelper(node, data, closest) {
         if (!node) return closest;
 
+        //At first this one will be always be true
         if (Math.abs(data - node.data) < Math.abs(data - closest)) {
             closest = node.data;
         }

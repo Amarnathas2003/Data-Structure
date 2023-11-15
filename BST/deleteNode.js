@@ -49,13 +49,14 @@ class BST {
         } else if (value > root.data) {
             root.right = this.deleteNode(root.right, value);
         } else {
+            //Cheking for nodes with one children or no children
             if (root.left === null) {
                 return root.right;
             } else if (root.right === null) {
                 return root.left;
             }
-            
-            //Getting the value for replacemenet
+
+            //Getting the value for replacemenet of the deleted node
             root.data = this.getMinvalue(root.right);
 
             //After getting the in order successor we can delete that value

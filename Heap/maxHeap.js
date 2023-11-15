@@ -1,4 +1,4 @@
-class minHeap {
+class maxHeap {
     constructor() {
         this.heap = [];
     }
@@ -29,15 +29,12 @@ class minHeap {
 
     heapifyUp() {
         let index = this.heap.length - 1;
-        //This checks that the current node has valid parent index &&
-        //And the parent value is greater than than the current nodes value, means swap is need
-        while (this.hasParentIndex(index) && this.parent(index) > this.heap[index]) {
+        while (this.hasParentIndex(index) && this.parent(index) < this.heap[index]) {
             this.swap(this.getParentIndex(index), index)
             index = this.getParentIndex(index);
         }
     }
 
-    //-----------------Belove is Remove an element Code ------------------
 
 
     getLeftChildIndex(parentIndex) {
@@ -79,11 +76,11 @@ class minHeap {
         while (this.hasLeftChildIndex(index)) {
             let smallestChildIndex = this.getLeftChildIndex(index);
 
-            if (this.hasRightChildIndex(index) && this.rightChild(index) < this.leftChild(index)) {
+            if (this.hasRightChildIndex(index) && this.rightChild(index) > this.leftChild(index)) {
                 smallestChildIndex = this.getRightChildIndex(index);
             }
 
-            if (this.heap[index] < this.heap[smallestChildIndex]) {
+            if (this.heap[index] > this.heap[smallestChildIndex]) {
                 break;
             } else {
                 this.swap(index, smallestChildIndex);
@@ -102,7 +99,7 @@ class minHeap {
     }
 }
 
-let heap = new minHeap()
+let heap = new maxHeap()
 
 heap.add(56)
 heap.add(8)
