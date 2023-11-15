@@ -36,7 +36,6 @@ class maxHeap {
     }
 
 
-
     getLeftChildIndex(parentIndex) {
         return 2 * parentIndex + 1;
     }
