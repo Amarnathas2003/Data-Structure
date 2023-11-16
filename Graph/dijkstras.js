@@ -48,7 +48,9 @@ class weightedGraph {
                 // Current nodes distance neighbour weight(edge weight)
                 const posibleDistance = distances[current.node] + neighbour.weight;
 
+                 // The comparison is if (3 < Infinity) at first
                 if (posibleDistance < distances[neighbour.node]) {
+                    //distances['B'] = possibleDistance; // After this line, distances['B'] will be updated to 3.
                     distances[neighbour.node] = posibleDistance;
                     priorityQueue.enqueue(neighbour.node, posibleDistance);
                 }
@@ -97,7 +99,7 @@ graph.display();
 const startNode = "A";
 const distances = graph.dijkstra(startNode);
 
-console.log("\nShortest Distances from", startNode + ":");
+console.log("Shortest Distances from", startNode);
 
 for (const node in distances) {
     console.log(node + ":", distances[node]);
