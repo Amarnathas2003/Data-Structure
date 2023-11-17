@@ -13,7 +13,7 @@ class Trie {
     insert(word) {
         let node = this.root;
         word = word.toLowerCase();
-        for (const char of word) {
+        for (let char of word) {
             if (!node.children[char]) {
                 node.children[char] = new TrieNode();
             }
@@ -25,13 +25,27 @@ class Trie {
     search(word) {
         let node = this.root;
         word = word.toLowerCase();
-        for (let char of word) {
+
+        for (const char of word) {
             if (!node.children[char]) {
                 return false;
             }
             node = node.children[char];
         }
         return node.isEnd;
+    }
+
+
+    prefixSearch(word) {
+        let node = this.root;
+        word = word.toLowerCase();
+        for (const char of word) {
+            if (!node.children[node]) {
+                false;
+            }
+            node = node.children[char];
+        }
+        return true;
     }
 
     delete(word) {
@@ -45,8 +59,9 @@ class Trie {
 
         if (index === word.length) {
             if (!node.isEnd) {
-                return false;
+                return false
             }
+
             node.isEnd = false;
             return Object.keys(node.children).length === 0;
         }
@@ -54,20 +69,17 @@ class Trie {
         let char = word[index];
         let nextNode = node.children[char];
 
-        const shouldDeleted = this.deleteWord(nextNode, word, index + 1);
+        let shouldDelete = this.deleteWord(nextNode, word, index + 1);
 
-        if (shouldDeleted) {
-            delete node.children[char];
+        if (shouldDelete) {
+            delete node.children[char];//Current Node
             return Object.keys(node.children).length === 0;
         }
     }
 }
 
-// Example usage:
 const trie = new Trie();
-trie.insert("apple");
-trie.insert("app");
-console.log(trie.search("app"));
-trie.delete("app");
-console.log(trie.search("apple"));
-console.log(trie.search("app")); 
+
+trie.insert("Hello")
+
+console.log(trie.prefixSearch("hello"));

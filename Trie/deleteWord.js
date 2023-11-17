@@ -51,17 +51,17 @@ class Trie {
                 //Word not found in array
                 return false;
             }
-            
-            node.isEnd = false; //Setting this beacuse the node has reched at its last position
-            return Object.keys(node.children).length === 0;
+
+            node.isEnd = false; //Doing this because in reality we are not deleting the word we are just changing the is isEnd Property to false. 
+            return Object.keys(node.children).length === 0;//Check the current node has any children associated with it.
         }
 
-        const char = word[index]
-        const nextNode = node.children[char]
+        const char = word[index];
+        const nextNode = node.children[char];
 
         //Recursively delete the word
         const shouldDelete = this.deleteWord(nextNode, word, index + 1)
-
+        
         if (shouldDelete) {
             delete node.children[char] //It will delete the current character
             return Object.keys(node.children).length === 0;
