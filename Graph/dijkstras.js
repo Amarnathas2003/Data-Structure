@@ -5,7 +5,6 @@ class weightedGraph {
 
     addVertex(vertex) {
         if (!this.adjacencylist[vertex]) {
-            //Using array to store as objects 
             this.adjacencylist[vertex] = [];
         }
     }
@@ -20,7 +19,7 @@ class weightedGraph {
             this.addVertex(vertex2);
         }
 
-        //PUSH to the Array
+
         this.adjacencylist[vertex1].push({ node: vertex2, weight });
         this.adjacencylist[vertex2].push({ node: vertex1, weight });
     }

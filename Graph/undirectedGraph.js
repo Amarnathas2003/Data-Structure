@@ -19,7 +19,6 @@ class Graph {
             this.addVertices(vertex2);
         }
 
-        //If vertexs alredy exists establish connection
         this.adjacencylist[vertex1].add(vertex2);
         this.adjacencylist[vertex2].add(vertex1);
     }
