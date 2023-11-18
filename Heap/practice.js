@@ -1,4 +1,4 @@
-class minHeap {
+class heap {
     constructor() {
         this.heap = [];
     }
@@ -11,67 +11,68 @@ class minHeap {
         return this.getParentIndex(index) >= 0;
     }
 
-    parent(index) {
-        return this.heap[this.getParentIndex(index)];
-    }
-
-    add(data) {
-        this.heap.push(data);
-        this.heapifyUp();
+    parent(childIndex) {
+        return this.heap[this.getParentIndex(childIndex)];
     }
 
     swap(index1, index2) {
-        [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
+        let temp = this.heap[index1];
+        this.heap[index1] = this.heap[index2];
+        this.heap[index2] = temp;
+    }
+
+    addNode(data) {
+        this.heap.push(data)
+        this.heapifyUp();
     }
 
     heapifyUp() {
-        let index = this.heap.length - 1;
-        while (this.hasParentIndex(index) && this.parent(index) > this.heap[index]) {
-            this.swap(this.getParentIndex(index), index);
-            index = this.getParentIndex(index);
+        let insertedIndex = this.heap.length - 1;
+        while (this.hasParentIndex(insertedIndex) && this.parent(insertedIndex) > this.heap[insertedIndex]) {
+            this.swap(this.getParentIndex(insertedIndex), insertedIndex)
+            this.insertedIndex = this.getParentIndex(insertedIndex);
         }
     }
 
+    getLeftChildIndex(currentIndex) {
+        return 2 * currentIndex + 1;
+    }
 
-    remove() {
-        if (this.heap === 0) return null;
-        let data = this.heap[0];
+    getRightChildIndex(currentIndex) {
+        return 2 * currentIndex + 2;
+    }
+
+    hasLeftIndex(currentIndex) {
+        return this.getLeftChildIndex(currentIndex) < this.heap.length;
+    }
+
+    hasRightIndex(currentIndex) {
+        return this.getRightChildIndex(currentIndex) < this.heap.length;
+    }
+
+    rightIndex(currentIndex) {
+        return this.heap[this.getRightChildIndex(currentIndex)];
+    }
+
+    leftIndex(currentIndex) {
+        return this.heap[this.getLeftChildIndex(currentIndex)];
+    }
+
+    removeNode() {
+        if (this.heap.length === 0) return null;
+        const data = this.heap[0];
         this.heap[0] = this.heap.pop();
         this.heapifyDown()
         return data;
     }
 
-    getLeftChildIndex(parentIndex) {
-        return 2 * parentIndex + 1;
-    }
-
-    getRightChildIndex(parentIndex) {
-        return 2 * parentIndex + 2;
-    }
-
-    hasLeftChildIndex(index) {
-        return this.getLeftChildIndex(index) <= this.heap.length;
-    }
-
-    hasRightChildIndex(index) {
-        return this.getRightChildIndex(index) <= this.heap.length;
-    }
-
-    leftIndex(index) {
-        return this.heap[this.getLeftChildIndex(index)];
-    }
-
-    rightChild(index) {
-        return this.heap[this.getRightChildIndex(index)]
-    }
-
     heapifyDown() {
         let index = 0;
-        while (this.hasLeftChildIndex(index)) {
-
+        while (this.hasLeftIndex(index)) {
             let smallestChildIndex = this.getLeftChildIndex(index);
-            if (this.hasRightChildIndex(index) && this.rightChild(index) < this.leftIndex(index)) {
-                smallestChildIndex = this.getRightChildIndex;
+
+            if (this.hasRightIndex(index) && this.rightIndex(index) < this.leftIndex(index)) {
+                smallestChildIndex = this.getRightChildIndex(index);
             }
 
             if (this.heap[index] < this.heap[smallestChildIndex]) {
@@ -79,51 +80,49 @@ class minHeap {
             } else {
                 this.swap(index, smallestChildIndex);
             }
-
             index = smallestChildIndex;
         }
     }
 
     printHeap() {
-        if (this.heap === 0) return null;
-        let result = "";
+        let output = "";
         for (let i = 0; i < this.heap.length; i++) {
-            result += `${this.heap[i]} , `;
+            output += `${this.heap[i]}, `;
         }
-        console.log(result);
+        console.log(output);
     }
 }
 
-const heapSort = (arr) => {
-    let heap = new minHeap()
+const heapSort = (array) => {
+    let newHeap = new heap();
 
-    for (let i = 0; i < arr.length; i++) {
-        heap.add(arr[i]);
+    for (let i = 0; i < array.length; i++) {
+        newHeap.addNode(array[i]);
     }
 
     let result = [];
-    for (let j = 0; j < arr.length; j++) {
-        result.push(heap.remove());
+    for (let i = 0; i < array.length; i++) {
+        result.push(newHeap.removeNode());
     }
     return result;
 }
 
-const heap = new minHeap();
+const myHeap = new heap();
 
-heap.add(67)
-heap.add(13)
-heap.add(89)
-heap.add(45)
-heap.add(56)
+myHeap.addNode(47)
+myHeap.addNode(78)
+myHeap.addNode(42)
+myHeap.addNode(65)
+myHeap.addNode(46)
 
-heap.printHeap();
+myHeap.printHeap();
 
-console.log('After deleting the node')
+console.log("After Removing the element")
+myHeap.removeNode()
 
-heap.remove()
-
-heap.printHeap();
+myHeap.printHeap();
 
 
-const array = [7, 9, 3, 4, 6]
-console.log(heapSort(array))
+const array = [6, 7, 23, 9, 3, 5]
+
+console.log(heapSort(array));

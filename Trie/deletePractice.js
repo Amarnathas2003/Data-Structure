@@ -6,6 +6,7 @@ class TrieNode {
 }
 
 class Trie {
+    
     constructor() {
         this.root = new TrieNode();
     }
@@ -35,19 +36,6 @@ class Trie {
         return node.isEnd;
     }
 
-
-    prefixSearch(word) {
-        let node = this.root;
-        word = word.toLowerCase();
-        for (const char of word) {
-            if (!node.children[node]) {
-                false;
-            }
-            node = node.children[char];
-        }
-        return true;
-    }
-
     delete(word) {
         return this.deleteWord(this.root, word, 0);
     }
@@ -72,7 +60,7 @@ class Trie {
         let shouldDelete = this.deleteWord(nextNode, word, index + 1);
 
         if (shouldDelete) {
-            delete node.children[char];//Current Node
+            delete node.children[char]; //Current Node
             return Object.keys(node.children).length === 0;
         }
     }

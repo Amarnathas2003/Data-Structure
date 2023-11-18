@@ -1,28 +1,27 @@
-//Creating a basic normal tree
-
 class TreeNode {
     constructor(value) {
         this.value = value;
         this.children = [];
     }
 
-    addChild(childNode) {
-        this.children.push(childNode);
+    addNode(value) {
+        return this.children.push(value);
     }
 
-    deleteNode(targetValue) {
-        this.children = this.children.filter(child => child.value !== targetValue);
-        for (let child of this.children) {
-            child.deleteNode(targetValue);
+    deleteNode(nodeValue) {
+        this.children = this.children.filter(child => child.value !== nodeValue);
+        for (const child of this.children) {
+            child.deleteNode(nodeValue);
         }
     }
 
-    searchNode(targetValue) {
-        if (this.value == targetValue) {
+    searchNode(nodeValue) {
+        if (this.value === nodeValue) {
             return this;
         }
+
         for (let child of this.children) {
-            let getNode = child.searchNode(targetValue);
+            let getNode = child.searchNode(nodeValue);
             if (getNode) {
                 return getNode;
             }
@@ -30,33 +29,32 @@ class TreeNode {
         return null;
     }
 
-    //Pre Order Traversal
-    traversal = (node) => {
+    inOrderTraversal = (node) => {
         console.log(node.value);
         for (let child of node.children) {
-            this.traversal(child);
+            this.inOrderTraversal(child);
         }
     }
 }
 
-const root = new TreeNode(58)
+const root = new TreeNode(50);
 
-const child1 = new TreeNode(45)
-const child2 = new TreeNode(88)
+const child1 = new TreeNode(89)
+const child2 = new TreeNode(45)
+const child3 = new TreeNode(56)
+const child4 = new TreeNode(34)
 
-root.addChild(child1)
-root.addChild(child2)
+root.addNode(child1)
+root.addNode(child2)
+root.addNode(child3)
+root.addNode(child4)
 
-root.traversal(root);
+root.inOrderTraversal(root);
 
-console.log("After the Delete");
-root.deleteNode(88);
+const exists = root.searchNode(45);
 
-root.traversal(root);
-
-const searchNode = root.searchNode(45);
-if (searchNode) {
-    console.log("Element exists with value", searchNode.value);
+if (exists) {
+    console.log("exists")
 } else {
-    console.log("Element does not exists");
+    console.log("Does not exists")
 }

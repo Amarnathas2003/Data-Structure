@@ -11,6 +11,7 @@ class TreeNode {
     //Deleting a node in the tree
     deleteNode(targetValue) {
         this.children = this.children.filter(child => child.value !== targetValue);
+        //Loop for deleting the value from the current nodes children
         for (let child of this.children) {
             child.deleteNode(targetValue);
         }
@@ -34,7 +35,7 @@ class TreeNode {
 
     //Searching a node in the tree
     searchNode(nodeValue) {
-        if (this.value == nodeValue) {
+        if (this.value === nodeValue) {
             return this;
         }
 

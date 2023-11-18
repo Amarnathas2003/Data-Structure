@@ -43,6 +43,7 @@ class BST {
     }
 
     findClosesthelper(node, data, closest) {
+
         if (!node) return closest;
 
         //At first this one will be always be true
@@ -55,8 +56,10 @@ class BST {
         } else if (data > node.data) {
             closest = this.findClosesthelper(node.right, data, closest);
         } else {
+            //Target data equals to current nodes value
             return node.data;
         }
+        
         return closest;
     }
 

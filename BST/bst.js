@@ -61,7 +61,6 @@ class BST {
         return Math.max(leftHeight, rightHeigt) + 1;
     }
 
-   
     inOrderTraversal(root) {
         if (!root) return;
         this.inOrderTraversal(root.left);
@@ -78,6 +77,7 @@ class BST {
         if (Math.abs(leftHeight - rightHeight) <= 1 && this.isBalanced(root.left) && this.isBalanced(root.right)) {
             return true;
         }
+
         return false;
     }
 
@@ -92,8 +92,9 @@ class BST {
             return false;
         }
 
-        //This one still bugs me...
         return (
+            //All values in the left subtree must be less than the root.data.
+            //All values in the right subtree must be Greater than the root.data.
             this.isBST(root.left, min, root.data) &&
             this.isBST(root.right, root.data, max)
         );

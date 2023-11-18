@@ -16,7 +16,6 @@ class maxHeap {
     }
 
     swap(index1, index2) {
-        // [this.heap[index1], this.heap[index2] = this.heap[index2], this.heap[index1]];
         let temp = this.heap[index1];
         this.heap[index1] = this.heap[index2];
         this.heap[index2] = temp;
@@ -63,7 +62,6 @@ class maxHeap {
     remove() {
         if (this.heap.length === 0) return null;
         let data = this.heap[0];
-        //Here it replaces the last node value to the first position
         this.heap[0] = this.heap.pop();
         this.heapifyDown();
         return data;

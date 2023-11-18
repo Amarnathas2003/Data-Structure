@@ -32,56 +32,7 @@ class weightedGraph {
         }
     }
 
-    dijkstra(startNode) {
-        const distances = {};
-        const priorityQueue = new PriorityQueue();
-
-        for (let node in this.adjacencylist) {
-            distances[node] = node === startNode ? 0 : Infinity;
-            priorityQueue.enqueue(node, distances[node]); //First it will store zero and zero
-        }
-
-        while (!priorityQueue.isEmpty()) {
-            const current = priorityQueue.dequeue();
-
-            for (const neighbour of this.adjacencylist[current.node]) {
-                const potentialDistance = distances[current.node] + neighbour.weight
-
-                if (potentialDistance < distances[neighbour.node]) {
-                    distances[neighbour.node] = potentialDistance;
-                    priorityQueue.enqueue(neighbour.node, potentialDistance);
-                }
-            }
-        }
-        return distances;   
-    }
 }
-
-class PriorityQueue {
-
-    constructor() {
-        this.queue = [];
-    }
-
-    enqueue(node, priority) {
-        this.queue.push({ node, priority })
-        this.sort();
-    }
-
-    dequeue() {
-        return this.queue.shift()
-    }
-
-    isEmpty() {
-        return this.queue.length === 0;
-    }
-
-    sort() {
-        this.queue.sort((a, b) => a.priority - b.priority);
-    }
-
-}
-
 
 const graph = new weightedGraph();
 

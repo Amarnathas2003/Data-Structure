@@ -63,6 +63,7 @@ class BST {
             //(Beacuse it is now used as root node)
             root.right = this.deleteNode(root.right, root.data)
         }
+        
         return root;
     }
 

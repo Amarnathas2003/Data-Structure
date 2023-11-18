@@ -66,6 +66,7 @@ class minHeap {
 
     remove() {
         if (this.heap.length === 0) return null;
+
         let data = this.heap[0];
         //Here it replaces the last node value to the first position
         this.heap[0] = this.heap.pop();
@@ -86,7 +87,7 @@ class minHeap {
             if (this.heap[index] < this.heap[smallestChildIndex]) {
                 break;
             } else {
-                this.swap(index, smallestChildIndex);
+                this.swap(this.heap[index], smallestChildIndex);
             }
 
             index = smallestChildIndex;
