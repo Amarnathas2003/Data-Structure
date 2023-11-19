@@ -3,7 +3,7 @@ function binarySearch(array, key) {
     let end = array.length - 1;
 
     while (start <= end) {
-        let mid = (start + end) / 2;
+        let mid = Math.floor((start + end) / 2);
 
         if (array[mid] == key) {
             console.log("Element Found:-")
