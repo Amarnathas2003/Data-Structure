@@ -18,8 +18,10 @@
 
 ->NOT = We can use this to get the opposite of the true
 
-->SELECT = TO Select fields from Database
+->SELECT = To Select fields from Database
 
+->DISTINCT = To get distinct values (Duplicate elements won't be there)
 
+->COUNT(DISTINCT city) = Gives the count of distinct values in city field
 
 
