@@ -1,4 +1,4 @@
-//Creation, Insertion, Search
+
 
 class BinaryTree {
     constructor(data) {
