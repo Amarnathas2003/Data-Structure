@@ -16,7 +16,6 @@ class BinaryTree {
     }
 }
 
-//Binary Tree Operation Functions
 
 //In-Order Traversal
 function inOrderTraversal(root) {
