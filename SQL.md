@@ -1,4 +1,4 @@
-- SQL COMMANDS
+ *** SQL COMMANDS ***
 
 - EXTRACT = To extract values from dates like day month or year
 
