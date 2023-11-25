@@ -45,9 +45,11 @@
 
 - ORDER BY = Sortes the result in ascending order by default.DESC for sorting in decending.
 
+- OFFSET = Specifys where to start selecting from
+
 - LIMIT = To limit the result upto a value
 
-- OFFSET = Specifys where to start selecting from
+- CURSOR = We can get result as few rows at a time
 
 - MIN = To get a MIN value from the column of table
 
@@ -68,6 +70,5 @@
 -  Alias = Used to give names for tables. It is temporary only. AS keyword is used to name the Table.
 
 || = To concantinate two fields. (|| ' -> ' || we can decorate it like this also)
-
 
 
