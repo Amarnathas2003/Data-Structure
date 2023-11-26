@@ -23,3 +23,37 @@
 9. GET data from 10 to 20
    **SELECT * FROM customers ORDER BY customer_id OFFSET 10 LIMIT 10;**
 
+10. Write a transaction 
+   -----WITHOUT USING SAVEPOINT-------
+   
+   BEGIN;
+   DO $$
+   BEGIN
+   UPDATE accounts SET account_balance = account_balance + 100 WHERE account_id = 1;
+   UPDATE accounts SET account_balance = account_balance + 100 WHERE account_id = 10;
+   END $$;
+   COMMIT;
+
+   -----WITH USING SAVEPOINT------
+   BEGIN;
+   UPDATE accounts SET account_balance = account_balance + 100 WHERE account_id = 1;
+   SAVEPOINT my_savepoint;
+   UPDATE accounts SET account_balance = account_balance + 100 WHERE account_id = 11;
+   ROLLBACK TO my_savepoint;
+   UPDATE accounts SET account_balance = account_balance + 100 WHERE account_id = 10;
+   COMMIT;
+
+11. Create A Trigger 
+   
+   create or replace function on_create_call() returns trigger as $example_table$
+   begin
+   insert into record(customer_name) values (new.customer_name);
+   return new;	
+   end;
+   $example_table$ language plpgsql;
+
+   create trigger example_trigger after insert on accounts
+   for each row execute procedure on_create_call();
+
+   INSERT INTO accounts (customer_name, account_balance) VALUES ('Aron', 600);
+
