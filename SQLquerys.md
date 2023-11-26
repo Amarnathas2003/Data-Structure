@@ -25,7 +25,7 @@
 
 10. Write a transaction 
    -----WITHOUT USING SAVEPOINT-------
-   
+
    BEGIN;
    DO $$
    BEGIN
@@ -56,4 +56,14 @@
    for each row execute procedure on_create_call();
 
    INSERT INTO accounts (customer_name, account_balance) VALUES ('Aron', 600);
+
+12. Create a stored Procedure 
+
+CREATE OR REPLACE FUNCTION get_all_data()
+RETURNS TABLE (account_id INT, customer_name VARCHAR(255), account_balance NUMERIC)
+AS $$
+BEGIN
+RETURN QUERY SELECT * FROM accounts;
+END;
+$$ LANGUAGE plpgsql;
 
