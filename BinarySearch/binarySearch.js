@@ -6,7 +6,7 @@ function binarySearch(array, key) {
         let mid = Math.floor((start + end) / 2);
 
         if (array[mid] == key) {
-            console.log("Element Found:-")
+            console.log("Element Found at position:-", mid + 1)
             return array[mid];
         }
 
@@ -18,39 +18,11 @@ function binarySearch(array, key) {
             end = mid - 1;
         }
     }
-
-    console.log("Element Not Found In the Array")
+    console.log("Element Not Found In the Array");
     return -1;
 }
 
-// const array = [10, 20, 30, 46, 55, 65, 80]
-// const result = binarySearch(array, 55);
-// console.log(result)
-
-function getNumber(array, value) {
-    let start = 0;
-    let end = array.length - 1;
-
-    while (start <= end) {
-        let mid = (start + end) / 2;
-
-        if (array[mid] == value) {
-            console.log(`Element found in  position ${mid + 1}`)
-            return array[mid];
-        }
-
-        if (array[mid] < value) {
-            start = mid + 1;
-        } else {
-            end = mid - 1;
-        }
-    }
-
-    console.log("Number Does not Exist In Array");
-    return -1;
-}
-
-const array = [10, 20, 30, 46, 55, 65, 80]
-const result = getNumber(array, 55);
-console.log(result)
+const array = [10, 20, 30, 46, 55, 65, 80];
+const result = binarySearch(array, 80);
+console.log(result);
 

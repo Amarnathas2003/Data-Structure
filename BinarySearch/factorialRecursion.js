@@ -22,6 +22,7 @@ function sumOfNumbers(n) {
 
 console.log(sumOfNumbers(10))
 
+
 function fibonacciSerious(a, b, n) {
 
     if (n == 0) {
@@ -39,8 +40,10 @@ const b = 1;
 console.log(a)
 console.log(b)
 const n = 7;
-
 fibonacciSerious(a, b, n - 2)
+
+
+
 
 function printInRang(start, end) {
 

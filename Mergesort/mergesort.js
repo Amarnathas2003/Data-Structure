@@ -22,7 +22,6 @@ function mergeSort(array) {
         let j = 0;
 
         while (i < first.length && j < last.length) {
-
             if (first[i] < last[j]) {
                 newArray.push(first[i]);
                 i++;
@@ -41,6 +40,7 @@ function mergeSort(array) {
             newArray.push(last[j])
             j++;
         }
+
         return newArray;
     }
 }
