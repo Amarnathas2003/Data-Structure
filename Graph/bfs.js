@@ -42,15 +42,18 @@ class Graph {
             let vertexNeighbours = this.adjacencylist[currentVertex]; //Get neibours of current element
             console.log(currentVertex);
 
-            //Insert the neighbour elements to the set and queue 
-            for (let neighbour of vertexNeighbours) {
-                if (!visited.has(neighbour)) {
-                    visited.add(neighbour);
-                    queue.push(neighbour);
+            if (vertexNeighbours) {
+                //Insert the neighbour elements to the set and queue 
+                for (let neighbour of vertexNeighbours) {
+                    if (!visited.has(neighbour)) {
+                        queue.push(neighbour);
+                        visited.add(neighbour);
+                    }
                 }
             }
         }
     }
+
 }
 
 const graph = new Graph();

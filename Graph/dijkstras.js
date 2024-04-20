@@ -10,16 +10,12 @@ class weightedGraph {
     }
 
     addEdge(vertex1, vertex2, weight) {
-
         if (!this.adjacencylist[vertex1]) {
             this.addVertex(vertex1);
         }
-
         if (!this.adjacencylist[vertex2]) {
             this.addVertex(vertex2);
         }
-
-
         this.adjacencylist[vertex1].push({ node: vertex2, weight });
         this.adjacencylist[vertex2].push({ node: vertex1, weight });
     }
@@ -98,7 +94,7 @@ graph.display();
 const startNode = "A";
 const distances = graph.dijkstra(startNode);
 
-console.log("Shortest Distances from", startNode);
+console.log("Shortest Distances from", startNode + " to");
 
 for (const node in distances) {
     console.log(node + ":", distances[node]);

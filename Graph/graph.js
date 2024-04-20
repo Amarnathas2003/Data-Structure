@@ -1,3 +1,10 @@
+// This is how it will look like (structure)
+// {
+//     "A": Set { "B" },
+//     "B": Set { "A", "C" },
+//     "C": Set { "B" },
+// }
+
 class Graph {
     constructor() {
         this.adjacencylist = {};
@@ -23,6 +30,9 @@ class Graph {
     }
 
     hasEdge(vertex1, vertex2) {
+        if (!this.adjacencylist[vertex1] || !this.adjacencylist[vertex2]) {
+            return false;
+        }
         return this.adjacencylist[vertex1]?.has(vertex2)
     }
 
@@ -45,3 +55,6 @@ graph.addEdge("C", "B")
 graph.display();
 
 console.log(graph.hasEdge("A", "B"));
+
+
+

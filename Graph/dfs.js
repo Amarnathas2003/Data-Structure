@@ -29,6 +29,7 @@ class Graph {
     }
 
     dfsRecursive(startVertex, visited) {
+        //Base case of recursive call
         if (!startVertex) return null;
 
         visited.add(startVertex);

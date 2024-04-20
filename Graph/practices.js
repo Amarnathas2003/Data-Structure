@@ -22,6 +22,7 @@ class Graph {
         this.adjacencylist[vertex2].add(vertex1)
     }
 
+    //Breadth First Taversal
     bfs(startNode) {
         const visited = new Set();
         visited.add(startNode);
@@ -41,6 +42,7 @@ class Graph {
         }
     }
 
+    //Depth First Traversal
     dfsTraversal(startNode) {
         let visited = new Set();
         dfsRecursive(startNode, visited);
@@ -58,7 +60,6 @@ class Graph {
             }
         }
     }
-
 
     display() {
         for (let vertex in this.adjacencylist) {
