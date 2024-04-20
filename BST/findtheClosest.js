@@ -59,7 +59,6 @@ class BST {
             //Target data equals to current nodes value
             return node.data;
         }
-        
         return closest;
     }
 

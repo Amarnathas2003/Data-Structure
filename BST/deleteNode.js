@@ -57,13 +57,14 @@ class BST {
             }
 
             //Getting the value for replacemenet of the deleted node
-            root.data = this.getMinvalue(root.right);
+            root.data = this.getMinValue(root.right);
 
             //After getting the in order successor we can delete that value
             //(Beacuse it is now used as root node)
             root.right = this.deleteNode(root.right, root.data)
         }
         
+        //Here with route is new bst without the specified delete element
         return root;
     }
 

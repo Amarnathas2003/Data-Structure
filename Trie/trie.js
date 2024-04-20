@@ -1,6 +1,6 @@
 class TrieNode {
     constructor() {
-        this.children = {}
+        this.children = {};
         this.isEnd = false;
     }
 }
@@ -17,7 +17,7 @@ class Trie {
         for (let char of word) {
             if (!node.children[char]) {
                 //Current node(root node) nte children ayi wordnte first letter assign cheyyunnu
-                //Just imagine that for every for the root node we are creating child nodes with character in the word
+                //Just imagine that for every root node we are creating child nodes with character in the word
                 node.children[char] = new TrieNode();
             }
             node = node.children[char]
@@ -38,7 +38,7 @@ class Trie {
         }
         return node.isEnd;
     }
-
+    
     prefixSearch(word) {
         let node = this.root;
         word = word.toLowerCase();
@@ -50,6 +50,7 @@ class Trie {
         }
         return true;
     }
+
 }
 
 

@@ -14,17 +14,17 @@ function getQuicksort(array, low, high) {
 
     while (s <= e) {
 
-        //Move s if its not violating
+        //Move s if its not violating.
         while (array[s] < pivot) {
             s++;
         }
 
-       //Move e if it's not vilolating 
+       //Move e if it's not vilolating. 
         while (array[e] > pivot) {
             e--;
         }
 
-        //Check that if start is less than or equal to end
+        //Check that if start is less than or equal to end.
         
         if (s <= e) {
             let temp = array[s];
@@ -35,7 +35,7 @@ function getQuicksort(array, low, high) {
         }
     }
 
-    //If You Have any Doubt in this check the Kunals Video Section How to put pivot at correct Position
+    //If You Have any Doubt in this check the Kunals Video Section How to put pivot at correct Position.
     getQuicksort(array, low, e);
     getQuicksort(array, s, high);
 }

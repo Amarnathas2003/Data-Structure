@@ -45,7 +45,6 @@ class LinkedList {
         while (current.next !== null) {
             current = current.next;
         }
-
         current.next = newNode;
     }
 
@@ -61,9 +60,7 @@ class LinkedList {
 
         let current = this.head;
         while (current && current.next !== null) {
-
             if (current.next.value === value) {
-
                 current.next = current.next.next;
             }
             current = current.next;

@@ -6,7 +6,6 @@ class TrieNode {
 }
 
 class Trie {
-    
     constructor() {
         this.root = new TrieNode();
     }
@@ -36,6 +35,7 @@ class Trie {
         return node.isEnd;
     }
 
+    //Delete word implentation 
     delete(word) {
         return this.deleteWord(this.root, word, 0);
     }
@@ -46,10 +46,9 @@ class Trie {
         }
 
         if (index === word.length) {
-            if (!node.isEnd) {
+            if (node.isEnd !== true) {
                 return false
             }
-
             node.isEnd = false;
             return Object.keys(node.children).length === 0;
         }
@@ -69,5 +68,14 @@ class Trie {
 const trie = new Trie();
 
 trie.insert("Hello")
+trie.insert("world")
+trie.insert("nath")
+trie.insert("amar")
 
-console.log(trie.prefixSearch("hello"));
+console.log(trie.search("amar"))
+trie.delete("amar")
+console.log(trie.search("amar"))
+console.log(trie.search("nath"))
+
+
+

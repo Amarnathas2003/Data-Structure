@@ -31,7 +31,6 @@ class Graph {
             console.log(vertex + '->' + [...this.adjacencylist[vertex]]);
         }
     }
-    
 }
 
 const graph = new Graph();

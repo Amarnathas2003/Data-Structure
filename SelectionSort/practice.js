@@ -1,8 +1,7 @@
 function selectionSort(array) {
     if (array.length <= 1) {
-        return array;
+        return;
     }
-
     for (let i = 0; i < array.length; i++) {
         let minIndex = i;
 
@@ -13,13 +12,16 @@ function selectionSort(array) {
         }
 
         if (minIndex !== i) {
-            let temp = array[i]
-            array[i] = array[minIndex]
-            array[minIndex] = temp
+            let temp = array[i];
+            array[i] = array[minIndex];
+            array[minIndex] = temp;
         }
     }
     return array;
 }
 
-const s = [8, 3, 7, 8, 4, 2, 90]
-console.log(selectionSort(s));
+const myArray = [5, 8, -20, -1];
+
+
+selectionSort(myArray);
+console.log(myArray);

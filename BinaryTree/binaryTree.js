@@ -1,5 +1,3 @@
-
-
 class BinaryTree {
     constructor(data) {
         this.data = data;
@@ -15,7 +13,6 @@ class BinaryTree {
         this.right = new BinaryTree(data);
     }
 }
-
 
 //In-Order Traversal
 function inOrderTraversal(root) {

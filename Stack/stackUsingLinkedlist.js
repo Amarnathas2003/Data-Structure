@@ -13,7 +13,7 @@ class Stack {
 
     push(data) {
         let newData = new Node(data);
-        newData.next = this.top; //Setting Current top node as newNode.next node
+        newData.next = this.top; // Setting Current top node as newNode.next node
         this.top = newData;
         this.size++;
     }

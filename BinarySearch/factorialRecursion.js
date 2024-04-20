@@ -42,9 +42,6 @@ console.log(b)
 const n = 7;
 fibonacciSerious(a, b, n - 2)
 
-
-
-
 function printInRang(start, end) {
 
     if (end == start) {

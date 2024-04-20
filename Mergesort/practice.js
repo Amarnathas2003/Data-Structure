@@ -1,14 +1,15 @@
 function mergeSort(array) {
+
     if (array.length <= 1) {
         return array;
     }
 
-    let mid = Math.floor(array.length / 2);
+    let mid = Math.floor(array.length / 2)
 
-    let left = mergeSort(array.slice(0, mid))
-    let right = mergeSort(array.slice(mid))
+    const left = mergeSort(array.slice(0, mid))
+    const right = mergeSort(array.slice(mid))
 
-    return mergedArray(left, right);
+    return mergedArray(left, right)
 
     function mergedArray(first, last) {
 
@@ -19,26 +20,26 @@ function mergeSort(array) {
 
         while (i < first.length && j < last.length) {
             if (first[i] < last[j]) {
-                newArray.push(first[i])
-                i++;
+                newArray.push(first[i]);
+                i++
             } else {
                 newArray.push(last[j])
-                j++;
+                j++
             }
-        }
 
-        while (i < first.length) {
-            newArray.push(first[i]);
-            i++;
-        }
+            while (i < first.length) {
+                newArray.push(first[i])
+                i++
+            }
 
-        while (j < last.length) {
-            newArray.push(last[j]);
-            j++;
+            while (j < last.length) {
+                newArray.push(last[j])
+                j++
+            }
         }
         return newArray;
     }
 }
 
-const array = [4, 7, 3, 2, 8, 9, 3]
-console.log(mergeSort(array))
+const array = [2, 5, 0, 8, -9];
+console.log(mergeSort(array));

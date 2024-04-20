@@ -5,13 +5,13 @@ function binarySearch(array, key) {
     while (start <= end) {
         let mid = Math.floor((start + end) / 2);
 
-        if (array[mid] == key) {
+        if (array[mid] === key) {
             console.log("Element Found at position:-", mid + 1)
             return array[mid];
         }
 
         if (array[mid] < key) {
-            //Here the element will be in right side means vale is greater than mid value
+            //Here the element will be in right side means value is greater than mid value
             start = mid + 1;
         } else {
             //array[mid] > key -> element will be in the left side of the array so we have to search there

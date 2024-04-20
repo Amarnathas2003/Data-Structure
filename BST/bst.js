@@ -13,7 +13,6 @@ class BST {
 
     insert(data) {
         const newNode = new Node(data);
-
         if (this.root === null) {
             this.root = newNode;
         } else {
@@ -51,6 +50,21 @@ class BST {
         return false;
     }
 
+    levelOrder() {
+        const queue = [];
+        queue.push(this.root);
+        while (queue.length) {
+            let current = queue.shift();
+            console.log(current.data);
+            if (current.left) {
+                queue.push(current.left);
+            }
+            if (current.right) {
+                queue.push(current.right);
+            }
+        }
+    }
+
     height(root) {
         if (!root) {
             return 0;
@@ -77,7 +91,6 @@ class BST {
         if (Math.abs(leftHeight - rightHeight) <= 1 && this.isBalanced(root.left) && this.isBalanced(root.right)) {
             return true;
         }
-
         return false;
     }
 

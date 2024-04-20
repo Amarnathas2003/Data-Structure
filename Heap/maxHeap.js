@@ -21,7 +21,7 @@ class maxHeap {
         this.heap[index2] = temp;
     }
 
-    add(data) {
+    addNode(data) {
         this.heap.push(data);
         this.heapifyUp();
     }
@@ -29,7 +29,7 @@ class maxHeap {
     heapifyUp() {
         let index = this.heap.length - 1;
         while (this.hasParentIndex(index) && this.parent(index) < this.heap[index]) {
-            this.swap(this.getParentIndex(index), index)
+            this.swap(this.getParentIndex(index), index);
             index = this.getParentIndex(index);
         }
     }
@@ -59,7 +59,7 @@ class maxHeap {
         return this.heap[this.getRightChildIndex(index)];
     }
 
-    remove() {
+    removeNode() {
         if (this.heap.length === 0) return null;
         let data = this.heap[0];
         this.heap[0] = this.heap.pop();
@@ -71,24 +71,24 @@ class maxHeap {
         let index = 0;
 
         while (this.hasLeftChildIndex(index)) {
-            let smallestChildIndex = this.getLeftChildIndex(index);
+            let largestChildIndex = this.getLeftChildIndex(index);
 
             if (this.hasRightChildIndex(index) && this.rightChild(index) > this.leftChild(index)) {
-                smallestChildIndex = this.getRightChildIndex(index);
+                largestChildIndex = this.getRightChildIndex(index);
             }
 
-            if (this.heap[index] > this.heap[smallestChildIndex]) {
-                break;
+            if (this.heap[index] < this.heap[largestChildIndex]) {
+                this.swap(index, largestChildIndex);
             } else {
-                this.swap(index, smallestChildIndex);
+                break;
             }
 
-            index = smallestChildIndex;
+            index = largestChildIndex;
         }
     }
 
     printHeap() {
-        let output = ""
+        let output = "";
         for (let i = 0; i < this.heap.length; i++) {
             output += `${this.heap[i]} , `;
         }
@@ -96,16 +96,16 @@ class maxHeap {
     }
 }
 
-let heap = new maxHeap()
+let heap = new maxHeap();
 
-heap.add(56)
-heap.add(8)
-heap.add(34)
-heap.add(88)
-heap.add(7)
+heap.addNode(56);
+heap.addNode(8);
+heap.addNode(34);
+heap.addNode(88);
+heap.addNode(7);
 
-heap.printHeap()
+heap.printHeap();
 
-heap.remove();
-console.log("After removing the item")
-heap.printHeap()
+heap.removeNode();
+console.log("After removing the item");
+heap.printHeap();

@@ -29,9 +29,10 @@ class weightedGraph {
         for (let vertex in this.adjacencylist) {
             let connections = this.adjacencylist[vertex].map(({ node, weight }) => `${node}(${weight})`);
             console.log(`${vertex} -> ${connections}`);
+            //Below line can be also used (Not recomended)
+            // console.log(vertex + "->", [...this.adjacencylist[vertex]])
         }
     }
-
 }
 
 const graph = new weightedGraph();

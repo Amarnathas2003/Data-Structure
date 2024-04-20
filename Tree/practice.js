@@ -4,57 +4,65 @@ class TreeNode {
         this.children = [];
     }
 
-    addNode(value) {
-        return this.children.push(value);
+    addChildren(childNode) {
+        this.children.push(childNode)
     }
 
-    deleteNode(nodeValue) {
-        this.children = this.children.filter(child => child.value !== nodeValue);
-        for (const child of this.children) {
-            child.deleteNode(nodeValue);
+    preOrderTraversal(root) {
+        console.log(root.value);
+        for (let node of root.children) {
+            this.preOrderTraversal(node);
         }
     }
 
-    searchNode(nodeValue) {
-        if (this.value === nodeValue) {
+    postOrderTraversal(root) {
+        for (let node of root.children) {
+            this.postOrderTraversal(node)
+        }
+        console.log(root.value)
+    }
+
+    deleteNode(value) {
+        this.children = this.children.filter(node => node.value !== value)
+    }
+
+    search(value) {
+        if (this.value === value) {
             return this;
         }
-
-        for (let child of this.children) {
-            let getNode = child.searchNode(nodeValue);
-            if (getNode) {
-                return getNode;
+        for (let node of this.children) {
+            const result = node.search(node);
+            if (result) {
+                return result;
             }
-        }
-        return null;
-    }
-
-    inOrderTraversal = (node) => {
-        console.log(node.value);
-        for (let child of node.children) {
-            this.inOrderTraversal(child);
         }
     }
 }
 
-const root = new TreeNode(50);
+const root = new TreeNode(80);
 
-const child1 = new TreeNode(89)
-const child2 = new TreeNode(45)
-const child3 = new TreeNode(56)
-const child4 = new TreeNode(34)
+const child1 = new TreeNode(59)
+const child2 = new TreeNode(55)
+const child3 = new TreeNode(34)
+const child4 = new TreeNode(38)
 
-root.addNode(child1)
-root.addNode(child2)
-root.addNode(child3)
-root.addNode(child4)
 
-root.inOrderTraversal(root);
+root.addChildren(child1)
+root.addChildren(child2)
+root.addChildren(child3)
+root.addChildren(child4)
 
-const exists = root.searchNode(45);
+root.preOrderTraversal(root)
+// console.log("Second One")
+// root.postOrderTraversal(root)
 
-if (exists) {
-    console.log("exists")
+// root.deleteNode(34)
+// root.preOrderTraversal(root)
+
+const foundNode = root.search(55);
+
+if (foundNode) {
+    console.log(`Node with value ${55} found in the tree.`);
 } else {
-    console.log("Does not exists")
+    console.log(`Node with value ${55} not found in the tree.`);
 }
