@@ -5,17 +5,17 @@ function mergeSort(array) {
         return array;
     }
 
-    let mid = Math.floor(array.length / 2); //Finidng the middle element
+    let mid = Math.floor(array.length / 2); // Finidng the middle element
 
     let left = mergeSort(array.slice(0, mid)); // -> Takes 0 to Mid Excluding the mid element
     let right = mergeSort(array.slice(mid)); // -> Takes mid to end(Including the mid and end)
 
     return mergeArray(left, right);
 
-    //This is the Merging Part
+    // This is the Merging Part
     function mergeArray(first, last) {
 
-        //New Array for storing elements
+        // New Array for storing elements
         const newArray = [];
 
         let i = 0;
@@ -45,6 +45,6 @@ function mergeSort(array) {
     }
 }
 
-const array = [2, 5, 0, 8, 9];
+const array = [2, 5, 0, 8, 9, 1];
 console.log(mergeSort(array));
 

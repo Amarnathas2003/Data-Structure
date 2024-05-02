@@ -76,7 +76,6 @@ class PriorityQueue {
     isSort() {
         this.queue.sort((a, b) => a.priority - b.priority);
     }
-
 }
 
 const graph = new weightedGraph();

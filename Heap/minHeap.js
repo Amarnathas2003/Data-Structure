@@ -1,4 +1,3 @@
-
 class minHeap {
     constructor() {
         this.heap = [];
@@ -36,7 +35,6 @@ class minHeap {
     }
 
     // Delete the node element code implementaion below 
-
     getLeftChildIndex(parentIndex) {
         return 2 * parentIndex + 1;
     }
@@ -71,7 +69,6 @@ class minHeap {
 
     heapifyDown() {
         let index = 0;
-
         while (this.hasLeftChildIndex(index)) {
             let smallestChildIndex = this.getLeftChildIndex(index);
 

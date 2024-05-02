@@ -12,6 +12,7 @@ class Graph {
 
     addVertex(vertex) {
         if (!this.adjacencylist[vertex]) {
+            //Dont forget this -> new Set();
             this.adjacencylist[vertex] = new Set();
         }
     }

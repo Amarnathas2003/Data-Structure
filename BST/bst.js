@@ -81,9 +81,9 @@ class BST {
         console.log(root.data)
         this.inOrderTraversal(root.right);
     }
-
+                                                           
     isBalanced(root) {
-        if (!root) return true;
+        if (!root) return true; 
 
         const leftHeight = this.height(root.left);
         const rightHeight = this.height(root.right);
@@ -108,8 +108,7 @@ class BST {
         return (
             //All values in the left subtree must be less than the root.data.
             //All values in the right subtree must be Greater than the root.data.
-            this.isBST(root.left, min, root.data) &&
-            this.isBST(root.right, root.data, max)
+            this.isBST(root.left, min, root.data) && this.isBST(root.right, root.data, max)
         );
     }
 }

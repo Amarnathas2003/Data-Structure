@@ -49,17 +49,20 @@ class BST {
         } else if (value > root.data) {
             root.right = this.deleteNode(root.right, value);
         } else {
+            //Here node to be deleted has been found in the tree
             //Cheking for nodes with one children or no children
+            // Case 1: Node to be deleted has one child or no child
             if (root.left === null) {
                 return root.right;
             } else if (root.right === null) {
                 return root.left;
             }
 
-            //Getting the value for replacemenet of the deleted node
+            // Case 2: Node to be deleted has two children
+            // So we will get the min value while is current nodes left min value
             root.data = this.getMinValue(root.right);
 
-            //After getting the in order successor we can delete that value
+            // Delete the in-order successor from the right subtree
             //(Beacuse it is now used as root node)
             root.right = this.deleteNode(root.right, root.data)
         }

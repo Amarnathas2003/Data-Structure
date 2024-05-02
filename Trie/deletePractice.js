@@ -50,6 +50,7 @@ class Trie {
                 return false
             }
             node.isEnd = false;
+            //Checking for any children exits or not
             return Object.keys(node.children).length === 0;
         }
 
@@ -59,7 +60,7 @@ class Trie {
         let shouldDelete = this.deleteWord(nextNode, word, index + 1);
 
         if (shouldDelete) {
-            delete node.children[char]; //Current Node
+            delete node.children[char]; //Current character
             return Object.keys(node.children).length === 0;
         }
     }

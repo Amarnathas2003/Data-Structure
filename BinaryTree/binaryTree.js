@@ -44,6 +44,7 @@ function height(root) {
         const leftHeight = height(root.left);
         const rightHeight = height(root.right);
 
+        //The +1 is added as indicating the current nodes height
         return Math.max(leftHeight, rightHeight) + 1;
     }
 }
@@ -60,6 +61,7 @@ root.left.insertRight(78)
 inOrderTraversal(root)
 
 const searchElement = search(root, 34)
+
 if (searchElement) {
     console.log("Element found")
 } else {

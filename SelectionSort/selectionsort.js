@@ -9,12 +9,13 @@ function selectionSort(array) {
             }
         }
 
-        if (minIndex !== i) {
+        if (minIndex !== i) { //Change happend it means another elem is there
             let temp = array[i];
             array[i] = array[minIndex];
             array[minIndex] = temp;
         }
     }
+    
     return array;
 }
 

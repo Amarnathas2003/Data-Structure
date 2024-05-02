@@ -10,7 +10,7 @@ class LinkedList {
         this.head = null;
     }
 
-    //add at first
+    //Add at first
     addFirst(element) {
         let newNode = new Node(element)
 
@@ -73,14 +73,13 @@ class LinkedList {
 
 
     display() {
-
         if (this.head === null) {
             console.log("The Linked List is empty")
             return;
         }
 
         let current = this.head;
-        while (current !== null) {
+        while (current !== null) {  
             console.log(current.value)
             current = current.next;
         }

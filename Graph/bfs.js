@@ -1,3 +1,9 @@
+// {
+//     "A": Set { "B" },
+//     "B": Set { "A", "C" },
+//     "C": Set { "B" },
+// }
+
 class Graph {
     constructor() {
         this.adjacencylist = {};
