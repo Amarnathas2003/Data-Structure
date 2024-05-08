@@ -81,7 +81,6 @@ class minHeap {
             } else {
                 break;
             }
-            
             index = smallestChildIndex;
         }
     }
@@ -106,8 +105,7 @@ function heapSort(array) {
     for (let i = 0; i < array.length; i++) {
         sorted.push(sortedHeap.remove())
     }
-
-    return sorted;
+    return sorted;  
 }
 
 let heap = new minHeap();

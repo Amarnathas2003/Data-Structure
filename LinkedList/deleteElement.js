@@ -27,7 +27,7 @@ class LinkedList {
 
     delete(value) {
         if (!this.head) {
-            console.log("Nothing to delete")
+            console.log("Nothing to Delete")
             return;
         }
 
@@ -43,7 +43,6 @@ class LinkedList {
             previous = current;
             current = current.next;
         }
-
         previous.next = current.next.next;
     }
 

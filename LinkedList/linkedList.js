@@ -42,22 +42,26 @@ class LinkedList {
     removeFirst() {
         if (this.head === null) {
             console.log("Nothing to Remove")
+            return
         }
 
         if (this.head.next === null) {
             this.head = null;
+            return
         }
-
+        
         this.head = this.head.next;
     }
 
     removeLast() {
         if (this.head === null) {
             console.log("Nothing to Remove From Array")
+            return
         }
 
         if (this.head.next === null) {
             this.head = null;
+            return
         }
 
         let current = this.head;

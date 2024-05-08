@@ -76,7 +76,7 @@ trie.insert("amar")
 console.log(trie.search("amar"))
 trie.delete("amar")
 console.log(trie.search("amar"))
-console.log(trie.search("nath"))
+// console.log(trie.search("nath"))
 
 
 
