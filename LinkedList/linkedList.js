@@ -71,8 +71,30 @@ class LinkedList {
             previous = current;
             current = current.next;
         }
-
         previous.next = null;
+    }
+
+    reverseList(point) {
+        if(!this.head) {
+            console.log("Nothing to reverse");
+            return;
+        }
+        
+        let current = this.head;
+        while(current && current.value !== point) {
+            current = current.next;
+        }
+        let reverseStart = current.next;
+        let nextNode = null;
+        let prev = null;
+        
+        while(reverseStart !== null) {
+             nextNode = reverseStart.next;
+             reverseStart.next = prev;
+             prev = reverseStart;
+             reverseStart = nextNode;
+        }
+        current.next = prev;
     }
 
 
